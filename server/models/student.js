@@ -1,16 +1,18 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'; 
 
 const studentSchema = mongoose.Schema({
-    id: Number,
-    studentName: String,
-    grade: String,
-    section : {
-        type: String,
-        default : 'AAAAAA'
-    }
+    Day: String,
+    FirstP: String, 
+    SecondP: String,
+    ThirdP: String, 
+    FourthP: String, 
+    FifthP: String,  
+    tutorial: {
+        type: String, 
+        default: 'A'
+    },
+    
+}); 
 
-});
-
-const student = mongoose.model('student' , studentSchema);
-
+const student= mongoose.model('student', studentSchema);
 export default student;
