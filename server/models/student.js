@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 const studentSchema = mongoose.Schema({
-    id: Number,
-    studentName: String,
-    grade: String,
+    username: String,
+    email: String,
+    major: String,
     section : {
         type: String,
         default : 'AAAAAA'

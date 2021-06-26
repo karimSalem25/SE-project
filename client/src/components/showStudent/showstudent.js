@@ -36,16 +36,14 @@ const deleteStudent = (id) => {
 
   return (
     <>
-      <h2>All students</h2>
+      <h2>Applied Students</h2>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell align="right">ID No.</TableCell>
-              <TableCell align="right">Grade</TableCell>
-              <TableCell align="right">Section</TableCell>
-              <TableCell align="right">Action</TableCell>
+              <TableCell align="right">username</TableCell>
+              <TableCell align="right">email</TableCell>
+              <TableCell align="right">Major</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -55,11 +53,11 @@ const deleteStudent = (id) => {
                   {student.studentName}
                 </TableCell>
             
-                <TableCell align="right">{student.id}</TableCell>
-                <TableCell align="right">{student.grade}</TableCell>
-                <TableCell align="right">{student.section}</TableCell>
+                <TableCell align="right">{student.username}</TableCell>
+                <TableCell align="right">{student.email}</TableCell>
+                <TableCell align="right">{student.major}</TableCell>
                 <TableCell align="right">
-                  <IconButton aria-label="delete" className={classes.margin} onClick = {() => deleteStudent(student._id)}>
+                  <IconButton aria-label="delete" className={classes.margin} onClick = {() => deleteStudent(student._username)}>
                     <DeleteIcon fontSize="small" />
                   </IconButton>
                 </TableCell>
