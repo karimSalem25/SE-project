@@ -12,6 +12,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 const CONNECTION_URL ='mongodb+srv://karimsalem25:ko@25102001@cluster0.e3rym.mongodb.net/database1?retryWrites=true&w=majority';
+const PORT = process.env.PORT || 5000;
 mongoose.connect(CONNECTION_URL , {
 	    useNewUrlParser:true, useUnifiedTopology:true
 	}).then(() => app.listen(PORT, () =>
