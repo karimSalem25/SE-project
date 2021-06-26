@@ -9,7 +9,7 @@ export const getStudents = async (req, res) => {
   }
 };
 
-export const createStudent = async (req, res) => {
+export const uploadGrades = async (req, res) => {
   const student = req.body;
   const newStudent = new StudentData(student);
 
