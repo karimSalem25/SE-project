@@ -12,7 +12,7 @@ function App() {
       <Container maxWidth = "g"> 
         <AppBar className={classes.appBar} position="static" color="inherit">
           <Typography className={classes.heading} variant = "h2" align = "center">
-            Upload Students Grades
+            Grading System
             </Typography>  
          </AppBar>
         <Grow in>
