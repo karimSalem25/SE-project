@@ -6,7 +6,7 @@ const studentSchema = mongoose.Schema({
     grade: String,
     section : {
         type: String,
-        default : 'AAAAAA'
+        default : ''
     }
 
 });

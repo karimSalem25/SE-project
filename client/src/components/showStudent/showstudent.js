@@ -36,16 +36,16 @@ const deleteStudent = (id) => {
 
   return (
     <>
-      <h2>All students</h2>
+      <h2>Grades of all students</h2>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Name</TableCell>
-              <TableCell align="right">ID No.</TableCell>
+              <TableCell align="right">ID Number</TableCell>
               <TableCell align="right">Grade</TableCell>
-              <TableCell align="right">Section</TableCell>
-              <TableCell align="right">Action</TableCell>
+              <TableCell align="right">course</TableCell>
+              <TableCell align="right">delete</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
