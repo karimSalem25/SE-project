@@ -45,6 +45,7 @@ const deleteStudent = (id) => {
               <TableCell align="right">ID Number</TableCell>
               <TableCell align="right">Grade</TableCell>
               <TableCell align="right">course</TableCell>
+              <TableCell align="right">TA/Instructor Name</TableCell>
               <TableCell align="right">delete</TableCell>
             </TableRow>
           </TableHead>
@@ -58,6 +59,7 @@ const deleteStudent = (id) => {
                 <TableCell align="right">{student.id}</TableCell>
                 <TableCell align="right">{student.grade}</TableCell>
                 <TableCell align="right">{student.section}</TableCell>
+                <TableCell align="right">{student.TAIname}</TableCell>
                 <TableCell align="right">
                   <IconButton aria-label="delete" className={classes.margin} onClick = {() => deleteStudent(student._id)}>
                     <DeleteIcon fontSize="small" />

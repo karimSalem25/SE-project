@@ -39,7 +39,7 @@ export default function CreateStudent() {
       <TextField id="outlined-basic" label="ID" variant="outlined" value={student.id} onChange = {(event) => {
           setStudent({ ...student, id: event.target.value})
       }}/>
-      <TextField id="outlined-basic" label="Name" variant="outlined" value={student.studentName} onChange = {(event) => {
+      <TextField id="outlined-basic" label="Student Name" variant="outlined" value={student.studentName} onChange = {(event) => {
           setStudent({ ...student, studentName: event.target.value})
       }}/>
       <TextField id="outlined-basic" label="Grade" variant="outlined" value={student.grade} onChange = {(event) => {
@@ -47,6 +47,9 @@ export default function CreateStudent() {
       }}/>
       <TextField id="outlined-basic" label="Course" variant="outlined" value={student.section} onChange = {(event) => {
           setStudent({ ...student, section: event.target.value})
+      }}/>
+      <TextField id="outlined-basic" label="TA/Instructor Name" variant="outlined" value={student.TAIname} onChange = {(event) => {
+          setStudent({ ...student, TAIname: event.target.value})
       }}/>
       <Button variant="contained" color="primary" onClick = {(CreateStudent)}>
         Upload
