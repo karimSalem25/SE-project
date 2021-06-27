@@ -39,6 +39,9 @@ export default function CreateStudent() {
       <TextField id="outlined-basic" label="User name" variant="outlined" value={student.username} onChange = {(event) => {
           setStudent({ ...student, username: event.target.value})
       }}/>
+      <TextField id="outlined-basic" label="ID" variant="outlined" value={student.id} onChange = {(event) => {
+          setStudent({ ...student, id: event.target.value})
+      }}/>
       <TextField id="outlined-basic" label="Email" variant="outlined" value={student.email} onChange = {(event) => {
           setStudent({ ...student, email: event.target.value})
       }}/>

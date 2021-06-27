@@ -41,23 +41,24 @@ const deleteStudent = (id) => {
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="right">username</TableCell>
-              <TableCell align="right">email</TableCell>
+              <TableCell>username</TableCell>
+              <TableCell align="right">ID</TableCell>
+              <TableCell align="right">Email</TableCell>
               <TableCell align="right">Major</TableCell>
+              <TableCell align="right">Delete</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {studentsList.map((student, key) => (
               <TableRow key={key}>
                 <TableCell component="th" scope="row">
-                  {student.studentName}
+                  {student.username}
                 </TableCell>
-            
-                <TableCell align="right">{student.username}</TableCell>
+                <TableCell align="right">{student.id}</TableCell>
                 <TableCell align="right">{student.email}</TableCell>
                 <TableCell align="right">{student.major}</TableCell>
                 <TableCell align="right">
-                  <IconButton aria-label="delete" className={classes.margin} onClick = {() => deleteStudent(student._username)}>
+                  <IconButton aria-label="delete" className={classes.margin} onClick = {() => deleteStudent(student.id)}>
                     <DeleteIcon fontSize="small" />
                   </IconButton>
                 </TableCell>
