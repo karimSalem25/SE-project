@@ -43,6 +43,7 @@ const deleteStudent = (id) => {
             <TableRow>
               <TableCell>Name</TableCell>
               <TableCell align="right">ID Number</TableCell>
+              <TableCell align="right">Element Name</TableCell>
               <TableCell align="right">Grade</TableCell>
               <TableCell align="right">Course</TableCell>
               <TableCell align="right">Major</TableCell>
@@ -58,6 +59,7 @@ const deleteStudent = (id) => {
                 </TableCell>
             
                 <TableCell align="right">{student.id}</TableCell>
+                <TableCell align="right">{student.elementName}</TableCell>
                 <TableCell align="right">{student.grade}</TableCell>
                 <TableCell align="right">{student.section}</TableCell>
                 <TableCell align="right">{student.major}</TableCell>
