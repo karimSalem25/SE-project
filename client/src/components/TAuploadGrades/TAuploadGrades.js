@@ -48,6 +48,9 @@ export default function CreateStudent() {
       <TextField id="outlined-basic" label="Course" variant="outlined" value={student.section} onChange = {(event) => {
           setStudent({ ...student, section: event.target.value})
       }}/>
+      <TextField id="outlined-basic" label="Major" variant="outlined" value={student.major} onChange = {(event) => {
+          setStudent({ ...student, major: event.target.value})
+      }}/>
       <TextField id="outlined-basic" label="TA/Instructor Name" variant="outlined" value={student.TAIname} onChange = {(event) => {
           setStudent({ ...student, TAIname: event.target.value})
       }}/>
