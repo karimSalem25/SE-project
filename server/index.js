@@ -102,18 +102,27 @@ app.get("/reset_password", function (req, res) {
  
 
 app.post("/reset_password", function (req, res) {
+	var username = req.body.username
+	var password = req.body.password
 
-    var uname = document.getElementById("name").value;
-    var oldP = document.getElementById("old_psw").value;
-    var newP = document.getElementById("new_psw").value;
+	User.register(User({ username: username }),
+	password, function (err, user) {
+		if (req.isAuthenticated()){
+			user.password = password ;
+		}
+		res.redirect("/login")
+		passport.authenticate("local")(
+			req, res, function () {
+			res.render("secret");
+		});
+	});
+});
 
-    User.register(User({ username: uname }),
-          password, function (err, user) {
-        if (user.username == uname && user.password == oldP) {
-            user.password = newP
-            return res.render("secret");
-        }
-    });
+
+app.post("/reset_password", passport.authenticate("local", {
+	successRedirect: "/secret",
+	failureRedirect: "/login"
+}), function (req, res) {
 });
 
 
