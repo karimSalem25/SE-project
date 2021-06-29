@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CreateStudent() {
+export default function apply() {
   const classes = useStyles();
 
   const [student, setStudent] = useState({
@@ -23,7 +23,7 @@ export default function CreateStudent() {
       section: ''
   });
 
-  const CreateStudent = () => {
+  const apply = () => {
     axios.post('http://localhost:5000/students',student).then(() => {
         window.location.reload(false);
     })
@@ -48,7 +48,7 @@ export default function CreateStudent() {
       <TextField id="outlined-basic" label="Major" variant="outlined" value={student.major} onChange = {(event) => {
           setStudent({ ...student, major: event.target.value})
       }}/>
-      <Button variant="contained" color="primary" onClick = {(CreateStudent)}>
+      <Button variant="contained" color="primary" onClick = {(apply)}>
         Create
       </Button>
     </form>
