@@ -95,6 +95,28 @@ function isLoggedIn(req, res, next) {
 	res.redirect("/login");
 }
 
+//reset password
+app.get("/reset_password", function (req, res) {
+    res.render("reset_password");
+});
+ 
+
+app.post("/reset_password", function (req, res) {
+
+    var uname = document.getElementById("name").value;
+    var oldP = document.getElementById("old_psw").value;
+    var newP = document.getElementById("new_psw").value;
+
+    User.register(User({ username: uname }),
+          password, function (err, user) {
+        if (user.username == uname && user.password == oldP) {
+            user.password = newP
+            return res.render("secret");
+        }
+    });
+});
+
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
 	console.log("Server Has Started!");
