@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CreateStudent() {
+export default function UploadGrades() {
   const classes = useStyles();
 
   const [student, setStudent] = useState({
@@ -23,7 +23,7 @@ export default function CreateStudent() {
       section: ''
   });
 
-  const CreateStudent = () => {
+  const UploadGrades = () => {
     axios.post('http://localhost:5000/students',student).then(() => {
         window.location.reload(false);
     })
@@ -57,7 +57,7 @@ export default function CreateStudent() {
       <TextField id="outlined-basic" label="TA/Instructor Name" variant="outlined" value={student.TAIname} onChange = {(event) => {
           setStudent({ ...student, TAIname: event.target.value})
       }}/>
-      <Button variant="contained" color="primary" onClick = {(CreateStudent)}>
+      <Button variant="contained" color="primary" onClick = {(UploadGrades)}>
         Upload
       </Button>
     </form>
