@@ -1,15 +1,8 @@
-import express from 'express'
-import {addCourse, deleteCourse} from '../controllers/course.js';
-import course from '../models/course.js'
+var express = require('express');
+var router = express.Router();
+var mongoo = require('mongodb');
+var assert = require('assert');
 
+var URL='';
 
-const router = express.Router();
-
-//router.get('/', addCourse);
-router.post('/', addCourse);
-router.delete('/:idd', deleteCourse);
-
-
-
-//
-export default router;
+module.exports = routers;

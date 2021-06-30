@@ -1,5 +1,15 @@
 import courseDATA from "../models/course.js";
 
+
+export const getCourse = async (req, res) => {
+  try {
+    const allCourses = await courseDATA.find();
+    res.status(200).json(allStudents);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
 export const addCourse = async (req, res) => {
   const course = req.body;
   const newCourse = new courseDATA(course);

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Courses</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <table id="productTable" class="table table-bordered table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th>Course ID</th>
+                            <th>Course Name</th>
+                            <th>Credit Hours</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    <section class="add">
+        <h4>Add Course</h4>
+        <form action="/add" method="POST">
+            <div class="input">
+                <label for="id">Course ID</label>
+                <input type="test" id="id" name="id">
+            </div>
+            <div class="input">
+                <label for="name">Course Name</label>
+                <input type="test" id="name" name="name">
+            </div>
+            <div class="input">
+                <label for="credit_hrs">Credit Hours</label>
+                <input type="test" id="credit_hrs" name="credit_hrs">
+            </div>
+            <button type="submit">ADD</button>
+        </form>
+    </section>
+</body>
+</html>
