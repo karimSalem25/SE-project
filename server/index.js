@@ -96,6 +96,37 @@ function isLoggedIn(req, res, next) {
 	res.redirect("/login");
 }
 
+//reset password
+app.get("/reset_password", function (req, res) {
+    res.render("reset_password");
+});
+ 
+
+app.post("/reset_password", function (req, res) {
+	var username = req.body.username
+	var password = req.body.password
+
+	User.register(User({ username: username }),
+	password, function (err, user) {
+		if (req.isAuthenticated()){
+			user.password = password ;
+		}
+		res.redirect("/login")
+		passport.authenticate("local")(
+			req, res, function () {
+			res.render("secret");
+		});
+	});
+});
+
+
+app.post("/reset_password", passport.authenticate("local", {
+	successRedirect: "/secret",
+	failureRedirect: "/login"
+}), function (req, res) {
+});
+
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
 	console.log("Server Has Started!");
