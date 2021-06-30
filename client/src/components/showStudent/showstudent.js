@@ -41,13 +41,14 @@ const deleteStudent = (id) => {
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
+              <TableCell>User Name</TableCell>
               <TableCell align="right">ID Number</TableCell>
-              <TableCell align="right">Element Name</TableCell>
-              <TableCell align="right">Grade</TableCell>
-              <TableCell align="right">Course</TableCell>
+              <TableCell align="right">First Name</TableCell>
+              <TableCell align="right">Second Name</TableCell>
+              <TableCell align="right">Last Name</TableCell>
+              <TableCell align="right">Email</TableCell>
               <TableCell align="right">Major</TableCell>
-              <TableCell align="right">TA/Instructor Name</TableCell>
+              
               <TableCell align="right">Delete</TableCell>
             </TableRow>
           </TableHead>
@@ -55,15 +56,16 @@ const deleteStudent = (id) => {
             {studentsList.map((student, key) => (
               <TableRow key={key}>
                 <TableCell component="th" scope="row">
-                  {student.studentName}
+                  {student.userName}
                 </TableCell>
             
                 <TableCell align="right">{student.id}</TableCell>
-                <TableCell align="right">{student.elementName}</TableCell>
-                <TableCell align="right">{student.grade}</TableCell>
+                <TableCell align="right">{student.firstName}</TableCell>
+                <TableCell align="right">{student.secondName}</TableCell>
+                <TableCell align="right">{student.lastName}</TableCell>
                 <TableCell align="right">{student.section}</TableCell>
                 <TableCell align="right">{student.major}</TableCell>
-                <TableCell align="right">{student.TAIname}</TableCell>
+                
                 <TableCell align="right">
                   <IconButton aria-label="delete" className={classes.margin} onClick = {() => deleteStudent(student._id)}>
                     <DeleteIcon fontSize="small" />
