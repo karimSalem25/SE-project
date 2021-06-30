@@ -2,11 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Login from './Login';
 import reportWebVitals from './reportWebVitals';
+import { Route, Switch,BrowserRouter } from "react-router-dom";
+ 
+
+
 
 ReactDOM.render(
+   <BrowserRouter>
+  <Switch>
+
+  <Route exact path="/">
+    <Login />
+  </Route>
+  <Route exact path="/Schedule">
+    <App />
+  </Route>
     
-    <App />,
+   
+</Switch></BrowserRouter>,
   document.getElementById('root')
 );
 
