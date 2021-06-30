@@ -1,5 +1,5 @@
 import express from 'express'
-import { getStudents, uploadGrades, deleteStudent} from '../controllers/student.js';
+import { getStudents, uploadGrades, deleteStudent} from '../controllers/TA.js';
 
 
 const router = express.Router();
