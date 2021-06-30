@@ -2,11 +2,14 @@ import mongoose from 'mongoose';
 
 const studentSchema = mongoose.Schema({
     id: Number,
-    studentName: String,
-    grade: String,
+    userName: String,
+    firstName: String,
+    secondName: String,
+    major: String,
+    lastName: String,
     section : {
         type: String,
-        default : 'AAAAAA'
+        default : ''
     }
 
 });
