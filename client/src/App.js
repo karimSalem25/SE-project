@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import { Container, AppBar, Typography, Grow, Grid} from '@material-ui/core';
-import Student from './components/showStudent/showstudent.js';
-import Create from './components/createStudent/createStudent.js';
+//import Student from './components/showStudent/showstudent.js';
+import Add from './components/add_course/add_course.js';
 import useStyles from './styles'
 import './App.css';
 
@@ -12,7 +12,7 @@ function App() {
       <Container maxWidth = "g"> 
         <AppBar className={classes.appBar} position="static" color="inherit">
           <Typography className={classes.heading} variant = "h2" align = "center">
-            Students Show & Create
+            course settings 
             </Typography>  
          </AppBar>
         <Grow in>
