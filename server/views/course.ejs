@@ -7,26 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h2>Courses</h2>
-            </div>
+    <section class ="get">
+        <h3>Load Courses</h3>
+        <a href="/get_data">Available Courses</a>
+        <div>
+            {{# each items}}
+                <article class="item">
+                    <div>ID: {{this.id}}</div>
+                    <div>Course Name: {{this.name}}</div>
+                    <div>Credit Hours: {{this.credit_hrs}}</div>
+                </article>
+            {{/each}}
         </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <table id="productTable" class="table table-bordered table-condensed table-striped">
-                    <thead>
-                        <tr>
-                            <th>Course ID</th>
-                            <th>Course Name</th>
-                            <th>Credit Hours</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </div>
-    </div>
+    </section>
     <section class="add">
         <h4>Add Course</h4>
         <form action="/add" method="POST">
@@ -43,6 +36,42 @@
                 <input type="test" id="credit_hrs" name="credit_hrs">
             </div>
             <button type="submit">ADD</button>
+        </form>
+    </section>
+    <section class="update">
+        <h5>Update Course</h5>
+        <form action="/update" method="POST">
+            <div class="input">
+                <label for="id">Course ID</label>
+                <input type="test" id="id" name="id">
+            </div>
+            <div class="input">
+                <label for="name">Course Name</label>
+                <input type="test" id="name" name="name">
+            </div>
+            <div class="input">
+                <label for="credit_hrs">Credit Hours</label>
+                <input type="test" id="credit_hrs" name="credit_hrs">
+            </div>
+            <button type="submit">UPDATE</button>
+        </form>
+    </section>
+    <section class="delete">
+        <h6>Delete Course</h6>
+        <form action="/delete" method="POST">
+            <div class="input">
+                <label for="id">Course ID</label>
+                <input type="test" id="id" name="id">
+            </div>
+            <div class="input">
+                <label for="name">Course Name</label>
+                <input type="test" id="name" name="name">
+            </div>
+            <div class="input">
+                <label for="credit_hrs">Credit Hours</label>
+                <input type="test" id="credit_hrs" name="credit_hrs">
+            </div>
+            <button type="submit">DELETE</button>
         </form>
     </section>
 </body>
