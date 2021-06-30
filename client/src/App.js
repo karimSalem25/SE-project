@@ -13,7 +13,7 @@ function App() {
         <AppBar className={classes.appBar} position="static" color="inherit">
           <Typography className={classes.heading} variant = "h2" align = "center">
             Apply
-            </Typography>  
+            </Typography>
          </AppBar>
         <Grow in>
           <Container>
