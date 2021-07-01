@@ -3,8 +3,8 @@ import mongoose from 'mongoose';
 const studentSchema = mongoose.Schema({
     id: Number,
     studentName: String,
-    grade: String,
-    section : {
+    major: String,
+    course : {
         type: String,
         default : 'AAAAAA'
     }
