@@ -17,47 +17,49 @@ const useStyles = makeStyles({
   },
 });
 
-export default function getCourse() {
+export default function ShowCoursesPerSem() {
   const classes = useStyles();
 
-  const [coursesList, setcoursesList] = useState([]);
+  const [CoursesPerList, setCoursesPerList] = useState([]);
 
-const deleteCourse = (id) => {
-    axios.delete('http://localhost:5000/courses/' + id).then(() => {
+const deleteStudent = (id) => {
+    axios.delete('http://localhost:5000/coursep/' + id).then(() => {
         window.location.reload(false); 
     })
 }
     
   useEffect(() => {
-    axios.get("http://localhost:5000/courses").then((allCourses) => {
-      setcoursesList(allCourses.data);
+    axios.get("http://localhost:5000/coursep").then((allCoursesPer) => {
+      setCoursesPerList(allCoursesPer.data);
     });
   }, []);
 
   return (
     <>
-      <h2>All Courses</h2>
+      <h2>Courses Per Major</h2>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Name</TableCell>
               <TableCell align="right">ID No.</TableCell>
-              <TableCell align="right">Credit Hours</TableCell>
-              <TableCell align="right">Section</TableCell>
+              <TableCell align="right">Major</TableCell>
+              <TableCell align="right">Course</TableCell>
+              <TableCell align="right">Delete</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {coursesList.map((course, key) => (
+            {CoursesPerList.map((coursep, key) => (
               <TableRow key={key}>
                 <TableCell component="th" scope="row">
-                  {course.name}
+                  {coursep.studentName}
                 </TableCell>
             
-                <TableCell align="right">{course.id}</TableCell>
-                <TableCell align="right">{course.credit_hrs}</TableCell>
+                <TableCell align="right">{coursep.id}</TableCell>
+                <TableCell align="right">{coursep.major}</TableCell>
+                <TableCell align="right">{coursep.course}</TableCell>
                 <TableCell align="right">
-                  <IconButton aria-label="delete" className={classes.margin} onClick = {() => deleteCourse(course._id)}>
+                  <IconButton aria-label="delete" className={classes.margin} onClick = {() => deleteStudent(coursep._id)}>
                     <DeleteIcon fontSize="small" />
                   </IconButton>
                 </TableCell>

@@ -8,7 +8,8 @@ import { Route, Switch,BrowserRouter } from "react-router-dom";
 import SignUp from './SignUp';
 import TA from './TA';
 import Admin from './Admin';
- 
+import Apply from './Apply' ;
+import CPerSem from './CPerSem';
 
 
 
@@ -31,8 +32,18 @@ ReactDOM.render(
   
   </Route>
   
+  
+  <Route exact path="/Apply">
+    <Apply />
+  
+  </Route>
+
   <Route exact path="/Admin">
     <Admin />
+  
+  </Route>
+  <Route exact path="/PER">
+    <CPerSem />
   
   </Route>
 
