@@ -16,15 +16,18 @@ const useStyles = makeStyles((theme) => ({
 export default function Apply() {
   const classes = useStyles();
 
-  const [student, setStudent] = useState({
-      id: '',
-      studentName: '',
-      grade: '',
-      section: ''
+  const [apply, setAppliedStudent] = useState({
+    firstName: '',
+    secondName: '',
+    lastName: '',
+    id: '',
+    userName: '',
+    section: '',
+    major: '',
   });
 
   const Apply = () => {
-    axios.post('http://localhost:5000/students',student).then(() => {
+    axios.post('http://localhost:5000/students',apply).then(() => {
         window.location.reload(false);
     })
   }
@@ -36,27 +39,27 @@ export default function Apply() {
           apply
       </h2>
     <form className={classes.root} noValidate autoComplete="off">
-      <TextField id="outlined-basic" label="First Name" variant="outlined" value={student.firstName} onChange = {(event) => {
-          setStudent({ ...student, firstName: event.target.value})
+      <TextField id="outlined-basic" label="First Name" variant="outlined" value={apply.firstName} onChange = {(event) => {
+          setAppliedStudent({ ...apply, firstName: event.target.value})
       }}/>
-      <TextField id="outlined-basic" label="Second Name" variant="outlined" value={student.secondName} onChange = {(event) => {
-          setStudent({ ...student, secondName: event.target.value})
+      <TextField id="outlined-basic" label="Second Name" variant="outlined" value={apply.secondName} onChange = {(event) => {
+          setAppliedStudent({ ...apply, secondName: event.target.value})
       }}/>
-      <TextField id="outlined-basic" label="Last Name" variant="outlined" value={student.lastName} onChange = {(event) => {
-          setStudent({ ...student, lastName: event.target.value})
+      <TextField id="outlined-basic" label="Last Name" variant="outlined" value={apply.lastName} onChange = {(event) => {
+          setAppliedStudent({ ...apply, lastName: event.target.value})
       }}/>
-      <TextField id="outlined-basic" label="ID" variant="outlined" value={student.id} onChange = {(event) => {
-          setStudent({ ...student, id: event.target.value})
+      <TextField id="outlined-basic" label="ID" variant="outlined" value={apply.id} onChange = {(event) => {
+          setAppliedStudent({ ...apply, id: event.target.value})
       }}/>
-      <TextField id="outlined-basic" label="User Name" variant="outlined" value={student.userName} onChange = {(event) => {
-          setStudent({ ...student, userName: event.target.value})
+      <TextField id="outlined-basic" label="User Name" variant="outlined" value={apply.userName} onChange = {(event) => {
+          setAppliedStudent({ ...apply, userName: event.target.value})
       }}/>
-      <TextField id="outlined-basic" label="Email" variant="outlined" value={student.section} onChange = {(event) => {
-          setStudent({ ...student, section: event.target.value})
+      <TextField id="outlined-basic" label="Email" variant="outlined" value={apply.section} onChange = {(event) => {
+          setAppliedStudent({ ...apply, section: event.target.value})
       }}/>
       
-      <TextField id="outlined-basic" label="Major" variant="outlined" value={student.major} onChange = {(event) => {
-          setStudent({ ...student, major: event.target.value})
+      <TextField id="outlined-basic" label="Major" variant="outlined" value={apply.major} onChange = {(event) => {
+          setAppliedStudent({ ...apply, major: event.target.value})
       }}/>
       
       <Button variant="contained" color="primary" onClick = {(Apply)}>

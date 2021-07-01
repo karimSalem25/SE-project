@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const studentSchema = mongoose.Schema({
+const ApplySchema = mongoose.Schema({
     id: Number,
     userName: String,
     firstName: String,
@@ -14,6 +14,6 @@ const studentSchema = mongoose.Schema({
 
 });
 
-const student = mongoose.model('student' , studentSchema);
+const apply = mongoose.model('apply' , ApplySchema);
 
-export default student;
+export default apply;
