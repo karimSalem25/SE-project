@@ -1,14 +1,13 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'; 
 
 const courseSchema = mongoose.Schema({
-    id: Number,
-    credit_hrs: Number,
-    course_name: String,
- 
     
+    CourseID: Number, 
+    CourseName: String, 
+    CreditHours: Number,  
+    
+    
+}); 
 
-});
-
-const course = mongoose.model('course' , courseSchema);
-
+const course= mongoose.model('course', courseSchema);
 export default course;

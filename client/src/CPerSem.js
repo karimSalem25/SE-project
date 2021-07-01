@@ -1,18 +1,17 @@
 //import logo from './logo.svg';
 import { Container, AppBar, Typography, Grow, Grid} from '@material-ui/core';
-import Student from './components/showCourse/showCourse.js';
-import Create from './components/createCourse/createCourse.js';
+import Student from './components/coursePerSemster/coursePerSemster.js';
 import useStyles from './styles'
 
 
-function Admin() {
+function CPerSem() {
   const classes = useStyles();
   return (
-    <div className="Admin">
+    <div className="CPerSem">
       <Container maxWidth = "g"> 
         <AppBar className={classes.appBar} position="static" color="inherit">
           <Typography className={classes.heading} variant = "h2" align = "center">
-            Courses Create & Display
+            Courses Per Semester
             </Typography>  
          </AppBar>
         <Grow in>
@@ -26,7 +25,7 @@ function Admin() {
             </Grid>
               <Grid item xs = {12} sm = {4}>
               <appBar className = {classes.appBar} position="static" color="inherit">
-                    <Create /> 
+ 
                   </appBar>
               </Grid>
           </Container>
@@ -37,4 +36,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default CPerSem;

@@ -9,7 +9,7 @@ export const getCourse = async (req, res) => {
   }
 };
 
-export const addCourse = async (req, res) => {
+export const createCourse = async (req, res) => {
   const course = req.body;
   const newCourse = new CourseData(course);
 
@@ -26,7 +26,7 @@ export const deleteCourse = async (req, res) => {
 
   try {
     await CourseData.findByIdAndRemove(idd).exec();
-    res.send("Course  Deleted!");
+    res.send("Course Deleted!");
   } catch (error) {
     console.log(error);
   }

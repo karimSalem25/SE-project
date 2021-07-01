@@ -1,26 +1,25 @@
 //import logo from './logo.svg';
 import { Container, AppBar, Typography, Grow, Grid} from '@material-ui/core';
-import Student from './components/showCourse/showCourse.js';
-import Create from './components/createCourse/createCourse.js';
+import Student from './components/showStudent/showstudent.js';
+import Create from './components/apply/apply.js';
 import useStyles from './styles'
 
-
-function Admin() {
+function Apply() {
   const classes = useStyles();
   return (
-    <div className="Admin">
+    <div className="Apply">
       <Container maxWidth = "g"> 
         <AppBar className={classes.appBar} position="static" color="inherit">
           <Typography className={classes.heading} variant = "h2" align = "center">
-            Courses Create & Display
-            </Typography>  
+            Apply
+            </Typography>
          </AppBar>
         <Grow in>
           <Container>
             <Grid container justify = "space-between" alignItems = "stretch">
               <Grid item xs = {12} sm = {7}>
                   <appBar className = {classes.appBar} position="static" color="inherit">
-                    <Student />
+                    
                   </appBar>
               </Grid>
             </Grid>
@@ -37,4 +36,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default Apply;

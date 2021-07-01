@@ -12,6 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -22,9 +23,9 @@ const useStyles = makeStyles({
 export default function ShowCourse() {
   const classes = useStyles();
 
-  const [coursesList, setCourseList] = useState([])
+  const [courseList, setCourseList] = useState([])
 
-  const deleteStudent= (id) => {
+  const deleteCourse= (id) => {
     axios.delete(`http://localhost:5000/course`).then( () =>{
       window.location.reload(false); 
     })
@@ -43,7 +44,7 @@ export default function ShowCourse() {
         <TableHead>
           <TableRow>
             
-            
+
             <TableCell align="right">Course ID</TableCell>
             <TableCell align="right">Course Name</TableCell>
             <TableCell align="right">Credit Hours</TableCell>
@@ -51,17 +52,14 @@ export default function ShowCourse() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {coursesList.map((course,key) => (
+          {courseList.map((course,key) => (
             <TableRow key={key}>
-              <TableCell component="th" scope="row">
-                {course.id}
-              </TableCell>
               
-              <TableCell align="right">{course.credit_hrs}</TableCell>
-              <TableCell align="right">{course.course_name}</TableCell>
-              
+              <TableCell align="right">{course.CourseID}</TableCell>
+              <TableCell align="right">{course.CourseName}</TableCell>
+              <TableCell align="right">{course.CreditHours}</TableCell>
               <TableCell align="right">
-           <IconButton aria-label="delete" className={classes.margin} onClick ={() => deleteStudent(course._id)}> 
+           <IconButton aria-label="delete" className={classes.margin} onClick ={() => deleteCourse(course._id)}> 
           <DeleteIcon fontSize="small" />
         </IconButton> 
               </TableCell>

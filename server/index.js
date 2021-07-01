@@ -137,6 +137,7 @@ import studentRoutes from './routes/student.js'
 import gradeRoutes from './routes/grades.js'
 import userRoutes from './routes/user.js'
 import courseRoutes from './routes/course.js'
+import applyRoutes from './routes/apply.js'
 const app = express();
 
 
@@ -148,7 +149,7 @@ app.use('/students' , studentRoutes);
 app.use('/grades' , gradeRoutes);
 app.use('/users' , userRoutes);
 app.use('/course' , courseRoutes);
-
+app.use('/apply' , applyRoutes);
 const CONNECTION_URL = 'mongodb+srv://karimsalem25:ko@25102001@cluster0.e3rym.mongodb.net/database1?retryWrites=true&w=majority';
 
 const PORT = process.env.PORT || 5000;
