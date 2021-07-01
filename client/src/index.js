@@ -5,6 +5,9 @@ import App from './App';
 import Login from './Login';
 import reportWebVitals from './reportWebVitals';
 import { Route, Switch,BrowserRouter } from "react-router-dom";
+import SignUp from './SignUp';
+import TA from './TA';
+import Admin from './Admin';
  
 
 
@@ -19,7 +22,20 @@ ReactDOM.render(
   <Route exact path="/Schedule">
     <App />
   </Route>
-    
+  <Route exact path="/SignUp">
+    <SignUp />
+  
+  </Route>
+  <Route exact path="/TA">
+    <TA />
+  
+  </Route>
+  
+  <Route exact path="/Admin">
+    <Admin />
+  
+  </Route>
+
    
 </Switch></BrowserRouter>,
   document.getElementById('root')

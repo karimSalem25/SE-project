@@ -1,18 +1,18 @@
 //import logo from './logo.svg';
 import { Container, AppBar, Typography, Grow, Grid} from '@material-ui/core';
-import Student from './components/showStudent/showstudent.js';
-import Create from './components/createStudent/createStudent.js';
+import Student from './components/showCourse/showCourse.js';
+import Create from './components/uploadCourse/uploadCourse.js';
 import useStyles from './styles'
-import './App.css';
 
-function App() {
+
+function Admin() {
   const classes = useStyles();
   return (
-    <div className="App">
+    <div className="Admin">
       <Container maxWidth = "g"> 
         <AppBar className={classes.appBar} position="static" color="inherit">
           <Typography className={classes.heading} variant = "h2" align = "center">
-            Schedule Show & Create
+            Course Show & Create
             </Typography>  
          </AppBar>
         <Grow in>
@@ -37,4 +37,4 @@ function App() {
   );
 }
 
-export default App;
+export default Admin;

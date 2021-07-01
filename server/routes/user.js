@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+/*const bcrypt = require('bcrypt');
 const { User, validate } = require('../models/user');
 const express = require('express');
 const router = express.Router();
@@ -30,4 +30,19 @@ router.post('/', async (req, res) => {
 
 module.exports = router; 
  
- 
+ */
+import express from 'express'
+import { getUsers, createUser, deleteUser} from '../controllers/user.js';
+import user from '../models/user.js'
+
+
+const router = express.Router();
+
+router.get('/', getUsers);
+router.post('/', createUser);
+router.delete('/:idd', deleteUser);
+
+
+
+//
+export default router;
