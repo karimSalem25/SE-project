@@ -26,6 +26,7 @@ export default function CreateStudent() {
     FifthP: '',
     tutorial: ''
       }); 
+     
 
    const createStudent = () => {
        axios.post('http://localhost:5000/students', student).then( () =>{
