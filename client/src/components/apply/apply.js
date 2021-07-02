@@ -65,6 +65,9 @@ export default function Apply() {
       <Button variant="contained" color="primary" onClick = {(Apply)}>
         apply
       </Button>
+      <a href="/ScheduleView">Check Schedule ya wla! </a>
+      <a href="/ViewGrade">Gyb  Zero ya wla fi grade! </a>
+      <a href="/Per">Check your courses this Semster! </a>
     </form>
     </>
   );

@@ -23,10 +23,30 @@ export const createCourse = async (req, res) => {
 
 export const deleteCourse = async (req, res) => {
   const idd = req.params.idd;
-
+  console.log(idd);
   try {
     await CourseData.findByIdAndRemove(idd).exec();
     res.send("Course Deleted!");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+export const updateCourse = async (req, res) => {
+  const c_id = req.body.CourseID;
+  const c_name = req.body.CourseName;
+  const c_credit_hrs = req.body.CreditHours;
+  try {
+    let course=await CourseData.findOne(
+      
+      { CourseID: c_id },
+     
+      ).exec();
+      course.CourseName=c_name
+      course.CreditHours=c_credit_hrs 
+      await course.save()
+    res.send("Course updated!");
   } catch (error) {
     console.log(error);
   }

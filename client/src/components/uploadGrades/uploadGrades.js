@@ -64,6 +64,8 @@ export default function UploadGrades() {
       <Button variant="contained" color="primary" onClick = {(UploadGrades)}>
         Upload
       </Button>
+
+      <a href="TAviewS">Go To Students </a>
      
     </form>
     </>

@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 import { Container, AppBar, Typography, Grow, Grid} from '@material-ui/core';
-import Student from './components/coursePerSemster/coursePerSemster.js';
+import Student from './components/coursePerSemster/coursePerSemester.js';
 import useStyles from './styles'
 
 

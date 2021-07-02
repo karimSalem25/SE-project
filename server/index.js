@@ -8,6 +8,7 @@ import gradeRoutes from './routes/grades.js'
 import userRoutes from './routes/user.js'
 import courseRoutes from './routes/course.js'
 import applyRoutes from './routes/apply.js'
+import authRoutes from './routes/Auth.js'
 const app = express();
 
 
@@ -20,6 +21,7 @@ app.use('/grades' , gradeRoutes);
 app.use('/users' , userRoutes);
 app.use('/course' , courseRoutes);
 app.use('/apply' , applyRoutes);
+app.use('/Auth', authRoutes);
 const CONNECTION_URL = 'mongodb+srv://karimsalem25:ko@25102001@cluster0.e3rym.mongodb.net/database1?retryWrites=true&w=majority';
 
 const PORT = process.env.PORT || 5000;
