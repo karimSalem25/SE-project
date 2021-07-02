@@ -13,9 +13,8 @@ UserSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model("User",UserSchema);*/
 import mongoose from 'mongoose'; 
 const UserSchema = mongoose.Schema({
-    FirstName: String,
-    LastName: String, 
-    Email: String,
+      
+   
     UserName: String, 
     Password: String, 
     role:{ 

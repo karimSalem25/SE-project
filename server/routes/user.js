@@ -38,8 +38,23 @@ import user from '../models/user.js'
 
 const router = express.Router();
 
-router.get('/', getUsers);
-router.post('/', createUser);
+router.get('/', (req,res)=> {              
+user.find()
+
+.then((user)=> res.json(user));
+
+
+
+});
+router.post('/', (req,res)=>{
+
+    const newUser = new user({
+        UserName: req.body.UserName,
+        Password : req.body.Password,
+        role: req.body.role
+      });
+      newUser.save().then((user) => res.json(user))
+});
 router.delete('/:idd', deleteUser);
 
 

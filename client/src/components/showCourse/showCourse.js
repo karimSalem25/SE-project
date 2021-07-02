@@ -26,13 +26,19 @@ export default function ShowCourse() {
   const [courseList, setCourseList] = useState([])
 
   const deleteCourse= (id) => {
-    axios.delete(`http://localhost:5000/course`).then( () =>{
+    axios.delete(`http://localhost:5000/course/`+id).then( () =>{
+      window.location.reload(false); 
+    })
+  }
+  const updateCourse= (id) => {
+    axios.post(`http://localhost:5000/course/update`).then( () =>{
       window.location.reload(false); 
     })
   }
   useEffect(() =>{
     axios.get('http://localhost:5000/course').then( (allCourses) => {
       setCourseList(allCourses.data); 
+      console.log(allCourses.data);
     })
   }, [])
 
@@ -45,7 +51,7 @@ export default function ShowCourse() {
           <TableRow>
             
 
-            <TableCell align="right">Course ID</TableCell>
+            <TableCell>Course ID</TableCell>
             <TableCell align="right">Course Name</TableCell>
             <TableCell align="right">Credit Hours</TableCell>
             <TableCell align="right">Remove</TableCell>
@@ -54,16 +60,20 @@ export default function ShowCourse() {
         <TableBody>
           {courseList.map((course,key) => (
             <TableRow key={key}>
+              <TableCell component="th" scope="row">
+                    {course.CourseID}
+              </TableCell>
               
-              <TableCell align="right">{course.CourseID}</TableCell>
               <TableCell align="right">{course.CourseName}</TableCell>
               <TableCell align="right">{course.CreditHours}</TableCell>
               <TableCell align="right">
+                
            <IconButton aria-label="delete" className={classes.margin} onClick ={() => deleteCourse(course._id)}> 
-          <DeleteIcon fontSize="small" />
-        </IconButton> 
-              </TableCell>
-
+          <DeleteIcon fontSize="small" />  
+           </IconButton> 
+           
+            </TableCell>
+            
             </TableRow>
           ))}
         </TableBody>
