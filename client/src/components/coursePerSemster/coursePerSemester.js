@@ -8,8 +8,6 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import axios from "axios";
-import IconButton from "@material-ui/core/IconButton";
-import DeleteIcon from "@material-ui/icons/Delete";
 
 const useStyles = makeStyles({
   table: {
@@ -21,16 +19,10 @@ export default function ShowCoursesPerSem() {
   const classes = useStyles();
 
   const [CoursesPerList, setCoursesPerList] = useState([]);
-
-const deleteStudent = (id) => {
-    axios.delete('http://localhost:5000/coursep/' + id).then(() => {
-        window.location.reload(false); 
-    })
-}
     
   useEffect(() => {
-    axios.get("http://localhost:5000/coursep").then((allCoursesPer) => {
-      setCoursesPerList(allCoursesPer.data);
+    axios.get("http://localhost:5000/course").then((allCourses) => {
+      setCoursesPerList(allCourses.data);
     });
   }, []);
 
@@ -41,28 +33,19 @@ const deleteStudent = (id) => {
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell align="right">ID No.</TableCell>
-              <TableCell align="right">Major</TableCell>
-              <TableCell align="right">Course</TableCell>
-              <TableCell align="right">Delete</TableCell>
+              <TableCell>ID Number</TableCell>
+              <TableCell align="right">Course name</TableCell>
+              <TableCell align="right">Credit Hours</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {CoursesPerList.map((coursep, key) => (
+            {CoursesPerList.map((course, key) => (
               <TableRow key={key}>
                 <TableCell component="th" scope="row">
-                  {coursep.studentName}
+                  {course.CourseID}
                 </TableCell>
-            
-                <TableCell align="right">{coursep.id}</TableCell>
-                <TableCell align="right">{coursep.major}</TableCell>
-                <TableCell align="right">{coursep.course}</TableCell>
-                <TableCell align="right">
-                  <IconButton aria-label="delete" className={classes.margin} onClick = {() => deleteStudent(coursep._id)}>
-                    <DeleteIcon fontSize="small" />
-                  </IconButton>
-                </TableCell>
+                <TableCell align="right">{course.CourseName}</TableCell>
+                <TableCell align="right">{course.CreditHours}</TableCell>
               </TableRow>
             ))}
           </TableBody>
